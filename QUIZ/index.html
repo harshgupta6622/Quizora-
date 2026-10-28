@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8fc">
+  <meta name="description" content="Quizora — your space to learn, practice, and play.">
+  <title>Quizora — Learn a little. Win a lot.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>@media(max-width:600px){.topbar-actions{gap:5px}.search-box{width:min(32vw,140px)}}</style>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" aria-label="Quizora home"><span class="brand-mark">q<span>.</span></span><span class="brand-name">quizora</span></a>
+      <div class="workspace-label">WORKSPACE</div>
+      <nav class="primary-nav" aria-label="Main navigation">
+        <button class="nav-link active" data-view="dashboard"><span class="nav-icon">⌂</span>Dashboard</button>
+        <button class="nav-link" data-view="explore"><span class="nav-icon">⌕</span>Explore quizzes <span class="nav-count">12</span></button>
+        <button class="nav-link" data-view="learning"><span class="nav-icon">▤</span>My learning</button>
+        <button class="nav-link" data-view="leaderboard"><span class="nav-icon">♧</span>Leaderboard</button>
+      </nav>
+      <div class="workspace-label tools-label">YOUR TOOLS</div>
+      <nav class="primary-nav" aria-label="Your tools">
+        <button class="nav-link" data-view="live"><span class="nav-icon">◉</span>Live rooms <span class="live-dot"></span></button>
+        <button class="nav-link" data-view="ai"><span class="nav-icon">✳</span>AI study buddy <span class="new-pill">NEW</span></button>
+        <button class="nav-link" data-view="creator"><span class="nav-icon">＋</span>Creator studio</button>
+      </nav>
+      <div class="sidebar-spacer"></div>
+      <div class="sidebar-upgrade"><div class="upgrade-spark">✳</div><p class="upgrade-title">Make every day<br>count.</p><p class="upgrade-copy">Unlock your full learning potential with Quizora Pro.</p><button class="upgrade-button" id="upgradeButton">Explore Pro <span>→</span></button><div class="upgrade-orbit"></div></div>
+      <button class="nav-link settings-link" data-view="settings"><span class="nav-icon">⚙</span>Settings</button>
+      <button class="profile-mini" id="profileButton"><span class="avatar avatar-small">H</span><span class="profile-mini-copy"><strong>Harsh Gupta</strong><small>Student account</small></span><span class="profile-dots">···</span></button>
+    </aside>
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu icon-button" id="menuButton" aria-label="Open navigation">☰</button>
+        <div class="breadcrumb"><span>Workspace</span><span class="breadcrumb-slash">/</span><strong id="breadcrumbCurrent">Dashboard</strong></div>
+        <div class="topbar-actions">
+          <label class="search-box" for="globalSearch"><span class="search-symbol">⌕</span><input id="globalSearch" type="search" placeholder="Search quizzes, topics..." autocomplete="off"><kbd>⌘ K</kbd></label>
+          <button class="icon-button notification-button" id="notificationButton" aria-label="Notifications">♧<i></i></button>
+          <button class="top-avatar" id="topProfileButton" aria-label="Open profile">H</button>
+        </div>
+      </header>
+      <div class="content-wrap">
+        <section class="view-panel active" id="dashboardView">
+          <div class="welcome-row">
+            <div><p class="eyebrow"><span class="eyebrow-star">✳</span> TUESDAY, OCTOBER 28, 2026</p><h1>Hey, Harsh <span class="wave">✦</span></h1><p class="welcome-subtitle">A little progress each day adds up to <strong>big results.</strong></p></div>
+            <button class="button button-outline" id="streakButton"><span class="streak-fire">♨</span> 8 day streak <span class="button-chevron">⌄</span></button>
+          </div>
+          <section class="hero-banner">
+            <div class="hero-copy"><span class="hero-kicker"><span class="sparkle">✦</span> YOUR DAILY CHALLENGE</span><h2>Small steps.<br><span>Big brain energy.</span></h2><p>One quick quiz a day keeps the knowledge growing. Ready to keep your streak alive?</p><button class="button button-light" data-quiz="daily">Take today's challenge <span>→</span></button><div class="hero-social"><span class="avatar-stack"><i>R</i><i>A</i><i>M</i></span><span>Join <strong>2,481</strong> learners today</span></div></div>
+            <div class="hero-art" aria-hidden="true"><div class="art-orbit orbit-a"></div><div class="art-orbit orbit-b"></div><div class="art-sun"></div><div class="art-planet planet-one"></div><div class="art-planet planet-two"></div><div class="art-card"><span class="art-card-icon">✳</span><span class="art-card-line"></span><span class="art-card-line short"></span><span class="art-card-check">✓</span></div><div class="art-star star-one">✦</div><div class="art-star star-two">✳</div><div class="art-star star-three">✧</div></div>
+            <div class="hero-pagination"><i class="selected"></i><i></i><i></i></div>
+          </section>
+          <section class="stats-grid" aria-label="Your learning statistics">
+            <article class="stat-card"><div class="stat-icon purple-icon">▤</div><span class="stat-label">Quizzes completed</span><div class="stat-bottom"><strong id="completedCount">24</strong><span class="stat-change positive">↗ 12% <small>vs last month</small></span></div><div class="mini-bars" aria-hidden="true"><i style="height:25%"></i><i style="height:38%"></i><i style="height:34%"></i><i style="height:58%"></i><i style="height:45%"></i><i style="height:72%"></i><i style="height:65%"></i><i style="height:88%"></i><i style="height:75%"></i><i style="height:100%"></i></div></article>
+            <article class="stat-card"><div class="stat-icon mint-icon">◉</div><span class="stat-label">Average accuracy</span><div class="stat-bottom"><strong>86<span class="stat-unit">%</span></strong><span class="stat-change positive">↗ 4.2% <small>vs last month</small></span></div><div class="progress-track"><span style="width:86%"></span></div><span class="progress-caption">You're in the top 18% of learners</span></article>
+            <article class="stat-card"><div class="stat-icon amber-icon">♨</div><span class="stat-label">Learning streak</span><div class="stat-bottom"><strong>8 <span class="stat-unit">days</span></strong><span class="stat-change neutral">Personal best: 14 days</span></div><div class="week-dots"><span class="done">M</span><span class="done">T</span><span class="done">W</span><span class="done">T</span><span class="done">F</span><span class="done today">S</span><span>S</span></div></article>
+            <article class="stat-card"><div class="stat-icon blue-icon">✧</div><span class="stat-label">Total points</span><div class="stat-bottom"><strong>2,840</strong><span class="rank-pill">#12 this week</span></div><div class="points-footer"><span>Next level: Quiz Wiz</span><span>760 XP to go</span></div><div class="progress-track points-track"><span style="width:72%"></span></div></article>
+          </section>
+          <section class="section-block">
+            <div class="section-heading"><div><h2>Pick up where you left off <span class="heading-spark">✦</span></h2><p>Your learning journey is right on track.</p></div><button class="text-button" data-view="learning">View all <span>→</span></button></div>
+            <div class="continue-card"><div class="course-art course-art-dsa"><span class="course-art-shape">⌘</span><span class="art-label">01 / 06</span><span class="art-pixel pixel-a"></span><span class="art-pixel pixel-b"></span></div><div class="continue-info"><div class="course-meta"><span class="tag tag-lilac">DATA STRUCTURES</span><span class="course-updated">Continued 2h ago</span></div><h3>Data Structures &amp; Algorithms</h3><p>Master the fundamentals of DSA, one question at a time.</p><div class="course-progress-line"><div class="progress-track"><span style="width:64%"></span></div><strong>64%</strong></div><div class="course-foot"><span>8 of 12 lessons completed</span><button class="button button-primary button-small" data-quiz="dsa">Continue learning <span>→</span></button></div></div></div>
+          </section>
+          <section class="section-block recommendation-block">
+            <div class="section-heading"><div><h2>Made for your brain <span class="heading-spark">✳</span></h2><p>Quizzes picked just for you.</p></div><button class="text-button" data-view="explore">Explore all quizzes <span>→</span></button></div>
+            <div class="filter-row"><button class="filter-chip selected" data-filter="All">For you <span>✦</span></button><button class="filter-chip" data-filter="Popular">Popular</button><button class="filter-chip" data-filter="New">New</button><button class="filter-chip" data-filter="Saved">Saved <span class="saved-count"></span></button><div class="filter-spacer"></div><button class="text-button subtle-button" data-view="explore">See all <span>→</span></button></div>
+            <div class="quiz-grid" id="quizGrid"></div>
+          </section>
+          <section class="bottom-grid">
+            <article class="panel-card activity-card"><div class="panel-heading"><div><h2>Your activity</h2><p>You're building a great habit!</p></div><button class="select-button" id="activityRange">This week <span>⌄</span></button></div><div class="chart-summary"><strong>18.5 <small>hrs</small></strong><span class="stat-change positive">↗ 8.4%</span><small>vs last week</small></div><div class="activity-chart" role="img" aria-label="Weekly activity chart showing a positive trend"><div class="chart-y-labels"><span>6h</span><span>4h</span><span>2h</span><span>0h</span></div><div class="chart-main"><div class="chart-grid-lines"><i></i><i></i><i></i><i></i></div><svg viewBox="0 0 640 150" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="chartFill" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#8371f6" stop-opacity=".19"/><stop offset="100%" stop-color="#8371f6" stop-opacity="0"/></linearGradient></defs><path class="chart-fill" d="M0,111 C28,106 42,87 75,89 S119,120 154,99 S198,91 230,84 S275,103 307,74 S354,79 384,67 S429,87 460,59 S507,64 537,41 S580,58 615,24 L640,31 L640,150 L0,150 Z"/><path class="chart-line" d="M0,111 C28,106 42,87 75,89 S119,120 154,99 S198,91 230,84 S275,103 307,74 S354,79 384,67 S429,87 460,59 S507,64 537,41 S580,58 615,24 L640,31"/><circle cx="615" cy="24" r="5" class="chart-point"/></svg><div class="chart-x-labels"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div></div></div></article>
+            <article class="panel-card leaderboard-card"><div class="panel-heading"><div><h2>Top learners <span class="tiny-trophy">♧</span></h2><p>Your weekly leaderboard</p></div><button class="text-button" data-view="leaderboard">View all <span>→</span></button></div><div class="leader-list"><div class="leader-row"><span class="leader-rank gold-rank">01</span><span class="avatar leader-avatar avatar-peach">A</span><span class="leader-name"><strong>Aarav Mehta</strong><small>Level 18 · Quiz legend</small></span><strong class="leader-points">3,240 <small>pts</small></strong></div><div class="leader-row"><span class="leader-rank silver-rank">02</span><span class="avatar leader-avatar avatar-blue">S</span><span class="leader-name"><strong>Sana Khan</strong><small>Level 16 · Brainiac</small></span><strong class="leader-points">3,080 <small>pts</small></strong></div><div class="leader-row"><span class="leader-rank bronze-rank">03</span><span class="avatar leader-avatar avatar-green">R</span><span class="leader-name"><strong>Rohan Patel</strong><small>Level 14 · On a roll</small></span><strong class="leader-points">2,960 <small>pts</small></strong></div><div class="leader-row current-leader"><span class="leader-rank">12</span><span class="avatar leader-avatar avatar-purple">H</span><span class="leader-name"><strong>You, Harsh!</strong><small>Level 9 · Rising star</small></span><strong class="leader-points">2,840 <small>pts</small></strong></div></div><button class="leaderboard-cta" data-view="leaderboard">See where you stand <span>→</span></button></article>
+          </section>
+          <footer class="footer-note"><span>Made for curious minds.</span><span>Keep going, you're doing great <span class="footer-heart">♥</span></span></footer>
+        </section>
+        <section class="view-panel" id="innerView" aria-live="polite"></section>
+      </div>
+    </main>
+  </div>
+  <div class="toast-region" id="toastRegion" aria-live="polite"></div><div class="modal-layer" id="modalLayer" aria-hidden="true"></div>
+</body>
+</html>
